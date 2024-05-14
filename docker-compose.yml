@@ -6,3 +6,5 @@ services:
       MYSQL_DATABASE: clean-database
     ports:
       - "3306:3306"
+    security_opt:
+      - "no-new-privileges"

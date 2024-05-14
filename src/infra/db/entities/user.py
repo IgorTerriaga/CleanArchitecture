@@ -12,4 +12,3 @@ class Users(Base):
     
     def __repr__(self):
         return f'Users [id={self.id}, first_name={self.first_name}]'
-    
