@@ -1,5 +1,5 @@
 #pylint: disable=redefined-builtin
-#pylint: disable=invalid-name
+#pylint: disable=invalid-name'
 class Users:
     def __init__(self, id: int, first_name: str, last_name: str, age: int) -> None:
         self.id = id

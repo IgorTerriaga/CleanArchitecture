@@ -3,9 +3,9 @@ from sqlalchemy import text
 from src.infra.db.settings.connection import DBConnectionHandler
 from .user_repository import UserRepository
 
-
 db_connection_handler = DBConnectionHandler()
 connection = db_connection_handler.get_engine().connect()
+
 
 @pytest.mark.skip(reason="Sensitive test")
 def test_insert_user():
@@ -15,7 +15,7 @@ def test_insert_user():
     users_repository = UserRepository()
     users_repository.insert_user(mocked_first_name, last_name=mocked_last_name, age=mocked_age)
 
-    sql  = f'SELECT * FROM users where age = {mocked_age}'
+    sql = f'SELECT * FROM users where age = {mocked_age}'
     response = connection.execute(text(sql))
     registry = response.fetchall()[0]
     assert registry.age == mocked_age
